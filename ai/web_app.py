@@ -1,13 +1,15 @@
 import chess
 import json
 import random
+import os
 from flask import Flask, render_template, jsonify
 from logic.chess import RandomAgent, SimpleMinimaxAgent
 
 # Initialize Flask app with explicit static and template folder paths
+current_dir = os.path.dirname(os.path.abspath(__file__))
 app = Flask(__name__, 
-           template_folder='/'.join(__file__.split('/')[:-1] + ['templates']),
-           static_folder='/'.join(__file__.split('/')[:-1] + ['static']))
+           template_folder=os.path.join(current_dir, 'templates'),
+           static_folder=os.path.join(current_dir, 'static'))
 
 class GameManager:
     def __init__(self):
