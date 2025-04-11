@@ -4,7 +4,10 @@ import random
 from flask import Flask, render_template, jsonify
 from logic.chess import RandomAgent, SimpleMinimaxAgent
 
-app = Flask(__name__, template_folder='templates', static_folder='static')
+# Initialize Flask app with explicit static and template folder paths
+app = Flask(__name__, 
+           template_folder='/'.join(__file__.split('/')[:-1] + ['templates']),
+           static_folder='/'.join(__file__.split('/')[:-1] + ['static']))
 
 class GameManager:
     def __init__(self):
@@ -122,5 +125,9 @@ def game_state():
     """Get the current game state."""
     return jsonify(game_manager.get_game_state())
 
+# For Vercel, we need to export the app
+app.debug = False
+
+# The following is only executed when the script is run directly
 if __name__ == '__main__':
     app.run(debug=True) 
