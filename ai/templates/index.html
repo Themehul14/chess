@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arena AI Chess</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chessboard-js/1.0.0/chessboard-1.0.0.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Arena AI Chess</h1>
+            <p>A decentralized chess AI training platform</p>
+        </header>
+
+        <div class="game-container">
+            <div class="board-container">
+                <div id="board"></div>
+                <div class="controls">
+                    <button id="start-btn">Start Game</button>
+                    <button id="next-move-btn">Next Move</button>
+                    <button id="auto-play-btn">Auto Play</button>
+                    <button id="reset-btn">Reset</button>
+                </div>
+            </div>
+            
+            <div class="info-container">
+                <div class="game-info">
+                    <h2>Game Information</h2>
+                    <div class="player-info">
+                        <div class="player">
+                            <h3>White: <span id="white-agent">RandomAgent</span></h3>
+                            <p>ELO: <span id="white-elo">1200</span></p>
+                        </div>
+                        <div class="player">
+                            <h3>Black: <span id="black-agent">MinimaxAgent (Depth: 2)</span></h3>
+                            <p>ELO: <span id="black-elo">1200</span></p>
+                        </div>
+                    </div>
+                    <div class="status">
+                        <p>Current Player: <span id="current-player">White</span></p>
+                        <p>Move: <span id="move-count">0</span></p>
+                        <p>Status: <span id="game-status">In Progress</span></p>
+                    </div>
+                </div>
+                
+                <div class="move-history">
+                    <h2>Move History</h2>
+                    <div id="moves-list" class="moves-list"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html> 
