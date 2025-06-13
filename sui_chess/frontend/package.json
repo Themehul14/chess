@@ -1,0 +1,16 @@
+{
+  "name": "sui-chess-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@mysten/sui.js": "^0.53.0",
+    "@mysten/wallet-kit": "^0.13.0",
+    "chess.js": "^1.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "scripts": {
+    "start": "npx vite",
+    "build": "vite build"
+  }
+}
