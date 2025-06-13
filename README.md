@@ -57,3 +57,4 @@ The Python implementation includes:
 ## License
 
 MIT License 
+See `sui_chess/README.md` for a full-stack Sui example with wallet integration.
