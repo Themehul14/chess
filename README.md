@@ -57,3 +57,21 @@ The Python implementation includes:
 ## License
 
 MIT License 
+## Web3 Chess Game
+
+This repo also contains a simple React based front-end in `frontend/` which interacts with a new Move module `ChessWager.move`.
+
+### Local setup
+
+1. Install Node.js and Sui CLI.
+2. `cd frontend && npm install` to install dependencies.
+3. `npm start` will launch the placeholder React app.
+4. Use `node deploy.js` to publish the Move contracts to testnet and update `PACKAGE_ID` inside `frontend/src/contract.js`.
+
+### Game modes
+
+- **PvP** – two connected wallets take turns.
+- **PvAI** – player vs a basic Minimax AI with randomness.
+- **AIvAI** – both sides are automated and can be watched live.
+
+Winning a wagered match mints an NFT trophy and updates the local leaderboard.
