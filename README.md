@@ -38,6 +38,33 @@ cd ai
 python agent_vs_agent.py
 ```
 
+3. Install frontend dependencies:
+```bash
+cd frontend
+npm install
+```
+
+## Running
+
+Start the Flask backend:
+```bash
+gunicorn ai.wsgi:app
+```
+
+Start the React frontend:
+```bash
+cd frontend
+npm start
+```
+
+## Deploying Smart Contracts
+
+Use the deploy script to publish Move contracts to testnet:
+```bash
+cd scripts
+./deploy.sh
+```
+
 ## Smart Contracts
 
 The project includes two main Move smart contracts:
@@ -53,6 +80,12 @@ The Python implementation includes:
 - Game simulation logic
 - ELO rating calculation
 - Strategy evaluation
+
+## Game Modes
+
+- **PvP**: Two human players compete on-chain with optional wagers.
+- **PvAI**: Play against the on-chain AI agent using the Minimax strategy.
+- **AIvAI**: Watch two AI agents battle and evolve their ratings.
 
 ## License
 
