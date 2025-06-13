@@ -1,0 +1,7 @@
+[package]
+name = "chess_wager"
+version = "0.0.1"
+
+[addresses]
+arena_ai_chess = "0x0"
+
